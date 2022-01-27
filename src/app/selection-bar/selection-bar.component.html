@@ -1,0 +1,25 @@
+<div class="container-row">
+
+  <app-selection-multi
+    name="kategorie"
+    [items]="categories"
+    (onSelectedChange)= "onCategoriesChange($event)">
+  </app-selection-multi>
+
+  <app-selection-multi
+    name="kuchnie"
+    [items]="cusines"
+    (onSelectedChange)= "onCusinesChange($event)"
+  >
+  </app-selection-multi>
+
+  <app-selection-multi
+    name="oceny"
+    [items]="rating"
+    (onSelectedChange)= "onRatingChange($event)">
+  </app-selection-multi>
+
+
+  <app-selection-slide></app-selection-slide>
+
+</div>

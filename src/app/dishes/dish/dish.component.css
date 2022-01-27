@@ -1,0 +1,87 @@
+
+#delete-btn {
+  position: relative;
+  font-size: 15px;
+  top: 50px;
+  left: 200px;
+  width: 80px;
+  height: 35px;
+  border: 0;
+  border-radius:20px;
+  background-color: rgba(255, 255, 255, 0.82);
+  z-index: 5;
+  color: #696363;
+  cursor: pointer;
+
+}
+#delete-btn:hover{
+  background-color: rgba(255, 255, 255, 0.73);
+  transform: scale(1.1);
+  transition: 200ms;
+}
+
+img{
+  position: relative;
+  height: auto;
+  display:block;
+  max-height: 180px;
+  width: 100%;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.card{
+  border-radius: 4px;
+  box-shadow: 3px 3px 10px #dedede;
+  width: 300px;
+  padding-bottom: 10px;
+}
+
+.card-body{
+  padding: 0 20px 20px 20px;
+}
+
+
+.submitButton{
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+  border-radius:10px;
+  background-color: rgba(255, 255, 255, 0.82);
+  z-index: 5;
+  color: #696363;
+  cursor: pointer;
+  border:0;
+  box-shadow: 3px 3px 10px #dedede;
+}
+
+.submitButton:hover{
+  transform: scale(1.1);
+  transition: 200ms;
+}
+.submitButton:disabled{
+  background-color: rgba(215, 215, 215, 0.3);
+  transform: none;
+  color: #aba9a9;
+  cursor: default;
+}
+
+.button-manage>*{
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 10px;
+}
+
+.red{
+  box-shadow: 0 0 10px #ea2100;
+}
+.green{
+  box-shadow: 0 0 10px #246e00;
+}
+.details-dish{
+  cursor: pointer;
+  color: #a14f00;
+}

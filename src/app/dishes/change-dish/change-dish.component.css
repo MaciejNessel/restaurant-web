@@ -1,0 +1,37 @@
+.btn{
+  font-size: 15px;
+  border: 0;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #a14f00;
+  color: white;
+  box-shadow: 3px 3px 10px #dedede;
+}
+
+
+.btn:hover{
+  transform: scale(1.05);
+  transition: 200ms;
+  background-color: #8c4400;
+}
+
+.first{
+  padding: 5px 10px 5px 10px;
+}
+
+.second{
+  margin-top: 20px;
+  padding: 10px 30px 10px 30px;
+}
+
+.main-container{
+  display: block;
+  margin: 80px auto 80px auto;
+  padding: 40px;
+  box-shadow: 3px 3px 10px #dedede;
+  width: 60%;
+  min-width: 300px;
+}
+
+

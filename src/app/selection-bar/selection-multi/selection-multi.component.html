@@ -1,0 +1,12 @@
+<div>
+  <h4>{{ name }}</h4>
+  <div style="width:200px">
+    <ng-multiselect-dropdown
+      [settings]="dropdownSettings"
+      [data]="items"
+      [(ngModel)]="selectedItems"
+      (onSelect)="selectedChange()"
+      (onDeSelect)="selectedChange()">
+    </ng-multiselect-dropdown>
+  </div>
+</div>

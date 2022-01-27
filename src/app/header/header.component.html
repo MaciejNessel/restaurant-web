@@ -1,0 +1,24 @@
+<nav class="navbar">
+  <button class="btn" (click)="mainSelect()">Strona główna</button>
+  <button class="btn" (click)="menuSelect()">Menu</button>
+  <button *ngIf="authService.isMenager()"  class="btn" (click)="addSelect()">Zarządzanie menu</button>
+  <button *ngIf="authService.isLoggedIn()" class="btn" (click)="cartSelect()">Koszyk</button>
+  <div *ngIf="authService.isLoggedIn() && cartService.getOrderCount()>10"
+       class="order-count"
+       style="background: lightblue;">
+    Zamówienia: {{ cartService.getOrderCount() }}
+  </div>
+  <div *ngIf="authService.isLoggedIn() && cartService.getOrderCount()<11"
+       class="order-count"
+       style="background: orange;">
+    Zamówienia: {{ cartService.getOrderCount() }}
+  </div>
+  <button class="btn" (click)="changeCurrency()">{{currency}}</button>
+  <button class="btn" (click)="login()" *ngIf="this.authService.userLogged==null">Logowanie</button>
+  <button class="btn"  (click)="this.register()" *ngIf="this.authService.userLogged==null" >Rejestracja</button>
+  <button class="btn" (click)="this.authService.userInfo()" *ngIf="this.authService.userLogged!=null">Zalogowany jako: {{this.authService.userLoggedEmail}}</button>
+  <button class="btn" *ngIf="authService.dataUser?.role=='admin'" (click)="admin()">Funkcje admina</button>
+  <button class="btn" (click)="this.authService.logout()" *ngIf="this.authService.userLogged!=null">Wyloguj</button>
+
+</nav>
+

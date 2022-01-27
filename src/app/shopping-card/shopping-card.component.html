@@ -1,0 +1,14 @@
+<div class="container-cart">
+  <h2 style="margin-bottom: 15px;">Koszyk</h2>
+  <div class="scroll">
+    <div class='box' *ngFor="let item of cartService.getShoppingCartView()">
+      <img src="{{item[0].image_src}}" alt="">
+      <h5 class="name">{{item[0].name}}</h5>
+      <h5 class="quantity">x{{item[1]}}</h5>
+    </div>
+  </div>
+
+  <div  *ngIf="cartService.getShoppingCartView().length==0" style="text-align: center">Brak produktów w koszyku</div>
+  <h4 style="text-align: right; margin-top: 15px">SUMA: {{sumaEl(cartService.getShoppingCartView()) | currency: currencyManage.getActualCurrency()}}</h4>
+  <button class="btn center-btn" (click)="order()">Złóż zamówienie</button>
+</div>

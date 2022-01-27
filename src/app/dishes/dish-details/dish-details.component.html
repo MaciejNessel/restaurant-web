@@ -1,0 +1,88 @@
+<div *ngIf="dish!=null" class="container-dish">
+
+  <h2 class="text-center">{{ dish!.name | uppercase  }}</h2>
+  <button *ngIf="authService.isMenager()" class="btn center-btn" (click)="dishChange()">Zmodyfikuj danie</button>
+  <div class="gallery">
+    <input type="radio" id="0" name="car" checked="checked"/>
+    <div></div>
+    <ng-container *ngFor="let dishImg of dish!.image_src_optional, index as i">
+      <input type="radio" id="{{i+1}}" name="car"/>
+      <div>
+        <label class="gallery-arrow" for="{{i}}"></label>
+        <div class="selected-img"><img src="{{dishImg}}"></div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="button-manage">
+    <div>
+      <button class="submitButton"
+              [disabled]="availability=='none'"
+              (click)="addOrder()">+</button>
+      <button class="submitButton"
+              [disabled]="orders==0"
+              (click)="removeOrder()">-</button>
+    </div>
+
+    <small *ngIf="availability=='normal'" style="color:#049f04">Pozostało: {{ dish.max_orders - orders }} </small>
+    <small *ngIf="availability=='low'" style="color:#ff9100">Pozostało jedynie: {{ dish.max_orders - orders}} </small>
+    <small *ngIf="availability=='none'" style="color:red; text-transform: uppercase">Wyprzedano!</small>
+  </div>
+  <div class="details">
+    <p><b>Opis:</b> {{dish!.description}}</p>
+    <p><b>Kuchnia:</b> {{ dish!.cusine | uppercase  }}</p>
+    <div class="categories">
+      <p><b>Kategorie: </b></p>
+      <p *ngFor="let cat of dish!.categories" class="category-card-names">{{ cat }}, </p>
+    </div>
+
+    <p><b>Cena:</b> {{ dish!.price | currency: currencyManage.getActualCurrency()}} </p>
+    <ng-container *ngIf="dish!.rate!=-1">
+      <p><b>Ocena:</b> {{dish!.rate}} (liczba głosów: {{dish!.rate_counter}})</p>
+    </ng-container>
+    <ng-container *ngIf="dish!.rate==-1">
+      <p><b>Ocena:</b> jeszcze nikt nie ocenił</p>
+    </ng-container>
+  <hr>
+  </div>
+
+  <h2>Recenzje</h2>
+  <div  class="ratestar" *ngIf="canRate.length!=0">Twoja ocena:
+    <div *ngFor="let i of canRate">⭐</div></div>
+  <div *ngIf="isVisible">
+    <h5>Dodaj nową:</h5>
+    <app-rating *ngIf="canRate.length==0"(onProp)="changed($event)"></app-rating>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <label for="name">Nazwa: </label><br>
+      <input class="form-control"type="text" id="name" formControlName="name">
+      <div *ngIf="submitted && f['name'].errors" class="input-valid">
+        <div *ngIf="f['name'].errors['required']">Podaj nazwę</div>
+      </div><br>
+      <label for="review">Recenzja: </label><br>
+      <input class="form-control"type="text" id="review" formControlName="review">
+      <div *ngIf="submitted && f['review'].errors" class="input-valid">
+        <div *ngIf="f['review'].errors['required']">Podaj opis recenzji</div>
+        <div *ngIf="f['review'].errors['minlength']">Podaj dłuższą nazwę</div>
+        <div *ngIf="f['review'].errors['maxlength']">Podaj krótszą nazwę</div>
+      </div><br>
+      <label for="purchaseDate">Data zakupu: </label><br>
+      <input class="form-control"type="date" id="purchaseDate" formControlName="purchaseDate"><br>
+      <button class="btn" type="submit" >Wyślij</button>
+    </form>
+    <hr>
+  </div>
+
+  <div class="review" *ngFor="let review of reviews">
+    <div class="review-head">
+      <p><b>Autor:</b> {{review.id.nick}} </p>
+      <p><b>Data dodania:</b> {{review.id.purchaseDate}}</p>
+    </div>
+    <p>{{review.id.name}}</p>
+    <p>{{review.id.review}}</p>
+  </div>
+
+
+</div>
+
+
+

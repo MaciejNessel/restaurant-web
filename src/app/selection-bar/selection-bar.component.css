@@ -1,0 +1,7 @@
+.container-row{
+  display: flex;
+  justify-content: center;
+}
+.container-row>*{
+  padding: 20px;
+}

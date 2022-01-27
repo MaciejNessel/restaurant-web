@@ -1,0 +1,21 @@
+.review{
+  box-shadow: 5px 5px 10px #c0c0c0;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.review>div{
+  padding: 10px;
+}
+.btn{
+  font-size: 15px;
+  border: 0;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #a14f00;
+  color: white;
+  box-shadow: 3px 3px 10px #dedede;
+  margin-left: 10px;
+}
+

@@ -1,0 +1,90 @@
+<div class="main-container">
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="container">
+      <h2 style="display: inline;">Dodaj danie</h2>
+      <div>
+        <p style="color:red; display: inline;">*</p>
+        <p style="display: inline; font-size: 10px; "> - pola obowiązkowe</p>
+      </div>
+        <label for="name">Nazwa dania<p style="color:red; display: inline">*</p></label>
+        <div class="box">
+          <input type="text" class="form-control" id="name" formControlName="name">
+          <div *ngIf="submitted && f['name'].errors" class="input-valid">
+            <div *ngIf="f['name'].errors['required']">Podaj nazwę</div>
+            <div *ngIf="f['name'].errors['minlength']">Podaj dłuższą nazwę</div>
+          </div>
+        </div>
+
+      <label for="ingredients">Składniki<p style="color:red; display: inline">*</p></label>
+       <div class="box">
+         <input type="text" class="form-control" id="ingredients" formControlName="ingredients">
+         <div *ngIf="submitted && f['ingredients'].errors" class="input-valid">
+           <div *ngIf="f['ingredients'].errors['required']">Podaj składniki</div>
+         </div>
+       </div>
+
+      <label for="price">Cena ($)<p style="color:red; display: inline">*</p></label>
+      <div class="box">
+
+        <input type="text" class="form-control" id="price" formControlName="price">
+        <div *ngIf="submitted && f['price'].errors" class="input-valid">
+          <div *ngIf="f['price'].errors['required']">Podaj cenę</div>
+          <div *ngIf="f['price'].errors['pattern']">Podaj poprawną cenę (przykład: 19.00)</div>
+        </div>
+      </div>
+
+      <label for="cusine">Kuchnia<p style="color:red; display: inline">*</p></label>
+      <div class="box">
+        <select class="form-control" id="cusine" formControlName="cusine">
+          <option *ngFor="let cusine of cusines" [ngValue]="cusine"> {{cusine}} </option>
+        </select>
+        <div *ngIf="submitted && f['cusine'].errors" class="input-valid">
+          <div *ngIf="f['cusine'].errors['required']">Podaj typ kuchni</div>
+        </div>
+      </div>
+
+      <label for="categories">Kategorie <p style="color:red; display: inline">*</p><p style="font-size: 10px"> aby dodać więcej niż jedną przytrzymaj Ctrl</p></label>
+      <div class="box">
+        <select multiple class="form-control" id="categories" formControlName="categories">
+          <option *ngFor="let cat of categories" [ngValue]="cat"> {{cat}} </option>
+        </select>
+        <div *ngIf="submitted && f['categories'].errors" class="input-valid">
+          <div *ngIf="f['categories'].errors['required']">Zaznacz kategorie</div>
+        </div>
+      </div>
+
+
+      <label for="image_src">Zdjęcie główne (link)<p style="color:red; display: inline">*</p></label>
+      <div class="box">
+        <input type="url" class="form-control" id="image_src" formControlName="image_src">
+        <div *ngIf="submitted && f['image_src'].errors" class="input-valid">
+          <div *ngIf="f['image_src'].errors['required']">Podaj link do zdjęcia</div>
+        </div>
+      </div>
+
+      <label for="image_src_optional">Zdjęcia opcjonalne</label>
+      <div class="box">
+        <input type="text" class="form-control" id="image_src_optional" formControlName="image_src_optional">
+      </div>
+
+      <label for="image_src_optional">Opis</label>
+      <div class="box">
+        <input type="text" class="form-control" id="description" formControlName="description">
+      </div>
+
+      <label for="max_orders">Dostępność<p style="color:red; display: inline">*</p></label>
+      <div class="box">
+        <input type="number" class="form-control" id="max_orders" formControlName="max_orders">
+        <div *ngIf="submitted && f['max_orders'].errors" class="input-valid">
+          <div *ngIf="f['max_orders'].errors['required']">Podaj dostępność</div>
+        </div>
+      </div>
+
+      <button type="submit" class="submitButton">Wyślij</button>
+    </div>
+  </form>
+
+
+
+</div>

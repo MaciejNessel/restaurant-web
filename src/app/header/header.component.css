@@ -1,0 +1,41 @@
+nav{
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.btn{
+  font-size: 15px;
+  border: 0;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #01b033;
+  color: white;
+  box-shadow: 3px 3px 10px #dedede;
+}
+
+
+.btn:hover{
+  transform: scale(1.05);
+  transition: 200ms;
+  background-color: #00731f;
+}
+
+.order-count{
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  box-shadow: 3px 3px 10px #dedede;
+}
+
+.order-count:hover{
+  transform: scale(1.1);
+  transition: 200ms;
+}
+
+
+hr{
+  margin: 20px 50px 20px 50px;
+}

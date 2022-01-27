@@ -1,0 +1,41 @@
+<button id="delete-btn" type="button" *ngIf="authService.isMenager()" (click)="del()">Usuń</button>
+
+<div [ngClass]="{'red': dish.id == dishesService.getRedDish(), 'green' : dish.id == dishesService.getGreenDish()}"  class="card" [@CardAnimation]>
+
+  <img *ngIf="dish.image_src!=''"src="{{ dish.image_src }}" alt="">
+
+  <div class="card-body">
+      <div style="display: flex; justify-content: space-between;">
+        <h4 >{{ dish.name| uppercase  }}</h4>
+        <h4>{{ dish.price | currency: currencyManage.getActualCurrency()}} </h4>
+      </div>
+      <div style="display: flex; justify-content: space-between">
+
+
+      <p>
+        {{ dish.cusine | uppercase  }}
+        <br>
+        <small *ngFor="let cat of dish.categories" class="category-card-names">{{ cat }} </small><br>
+      </p>
+    </div>
+
+
+    <div class="button-manage" *ngIf="authService.isLoggedIn()">
+      <div>
+        <button class="submitButton"
+                [disabled]="availability=='none'"
+                (click)="addOrder()">+</button>
+        <button class="submitButton"
+                [disabled]="orders==0"
+                (click)="removeOrder()">-</button>
+      </div>
+
+      <small *ngIf="availability=='normal'" style="color:#049f04">Pozostało: {{ dish.max_orders - orders }} </small>
+      <small *ngIf="availability=='low'" style="color:#ff9100">Pozostało jedynie: {{ dish.max_orders - orders}} </small>
+      <small *ngIf="availability=='none'" style="color:red; text-transform: uppercase">Wyprzedano!</small>
+      <a class="details-dish" (click)="dishView()">Wyświetl szczegóły</a>
+    </div>
+    <div class="button-manage" *ngIf="!authService.isLoggedIn()"><hr></div>
+
+
+</div>

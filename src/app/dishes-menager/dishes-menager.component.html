@@ -1,0 +1,37 @@
+<div class="container">
+  <br>
+  <button  class="btn" (click)="add()">Dodaj nowe danie</button>
+  <br>
+  <br>
+</div>
+
+<div class="card-view">
+  <div *ngFor="let dish of dishes">
+
+  <div class="box">
+
+    <img *ngIf="dish.image_src!=''"src="{{ dish.image_src }}" alt="">
+
+    <div class="card-body">
+      <div>
+        <h4 >{{ dish.name| uppercase  }}</h4>
+
+      </div>
+
+      <div style="display: flex; justify-content: space-between">
+        <h4>{{ dish.price | currency: currencyManage.getActualCurrency()}} </h4>
+
+        <p>
+          {{ dish.cusine | uppercase  }}
+          <br>
+          <small *ngFor="let cat of dish.categories" class="category-card-names">{{ cat }} </small><br>
+        </p>
+      </div>
+
+  </div>
+    <div>
+      <button class="btn-small" type="button" (click)="del(dish)">Usuń</button>
+      <button class="btn-small" type="button" (click)="change(dish)">Zmodyfikuj</button></div>
+  </div>
+
+</div>

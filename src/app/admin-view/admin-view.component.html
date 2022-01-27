@@ -1,0 +1,20 @@
+<br><br>
+<app-persistance></app-persistance>
+<br><br>
+<div class="container">
+  <h2>Zarządzaj użytkownikami</h2>
+  <div class="review" *ngFor="let user of users">
+    <div><b>ID:</b> {{user.id}}</div>
+    <div><b>Imię:</b> {{user.data.first_name}} </div>
+    <div><b>Nazwisko:</b> {{user.data.last_name}} </div>
+    <div><b>Numer telefonu:</b> {{user.data.phone}} </div>
+
+    <button *ngIf="user.data.role!='admin'" class="btn" (click)="addadmin(user)">Nadaj status admina</button>
+    <button *ngIf="user.data.role=='admin'" class="btn" (click)="unaddadmin(user)">Odbierz status admina</button>
+    <button *ngIf="user.data.role!='menager'" class="btn" (click)="addmenager(user)">Nadaj status menagera</button>
+    <button *ngIf="user.data.role=='menager'" class="btn" (click)="unaddmenager(user)">Odbierz status menagera</button>
+    <button *ngIf="user.data.ban!=true" class="btn" (click)="ban(user)">Zablokuj</button>
+    <button *ngIf="user.data.ban==true" class="btn" (click)="unban(user)">Odblokuj</button>
+  </div>
+
+</div>

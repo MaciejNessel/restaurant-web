@@ -1,0 +1,13 @@
+<h4>cena ({{currencyManage.getActualCurrencySymbol()}})</h4>
+
+<npn-slider
+            style="position: absolute; width: 200px; "
+            [min]="dishesService.minPrice" [max]="dishesService.maxPrice"
+            [minSelected]="dishesService.minPrice"
+            [maxSelected]="dishesService.maxPrice"
+            [step]="1"
+            [showStepIndicator]="true"
+            (onChange)="onSliderChange($event)"
+></npn-slider>
+
+

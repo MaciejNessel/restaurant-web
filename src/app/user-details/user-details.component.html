@@ -1,0 +1,26 @@
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="container-login">
+
+    <h2>Zanim zaczniesz uzupełnij swoje dane:</h2>
+
+    <label for="first_name">Imię</label>
+    <div class="box">
+      <input type="text" class="form-control" id="first_name" formControlName="first_name">
+    </div>
+
+    <label for="last_name">Nazwisko</label>
+    <div class="box">
+      <input type="text" class="form-control" id="last_name" formControlName="last_name">
+    </div>
+
+    <label for="phone">Numer telefonu</label>
+    <div class="box">
+      <input type="text" class="form-control" id="phone" formControlName="phone">
+    </div>
+
+    <button type="submit" class="submitButton">Kontynuuj</button>
+  </div>
+
+</form>
+

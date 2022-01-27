@@ -1,0 +1,50 @@
+.main-container{
+  display: block;
+  margin: 80px auto 80px auto;
+  padding: 40px;
+  box-shadow: 3px 3px 10px #dedede;
+  width: 60%;
+  min-width: 300px;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+}
+
+.container>*{
+  padding: 2px;
+  margin: 5px;
+}
+
+.box>input, select{
+  border: 0;
+  box-shadow: 3px 3px 10px #dedede;
+}
+
+.submitButton{
+  font-size: 20px;
+  color: #ffffff;
+  grid-column: 2;
+  border: 0;
+  box-shadow: 3px 3px 10px #dedede;
+  border-radius: 20px;
+  background-color: #a14f00;
+  cursor: pointer;
+}
+
+.submitButton:hover{
+  transition: 200ms;
+  background-color:  #8c4400;
+  transform: scale(1.05);
+}
+
+
+
+.input-valid{
+color: red;
+  font-size: 10px;
+  text-align: center;
+}
+

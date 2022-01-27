@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="data" *ngIf="userData!=null">
+    <h2>Dane osobowe</h2>
+    <p>Imię: {{userData.first_name}}</p>
+    <p>Nazwisko: {{userData.last_name}}</p>
+    <p>Numer telefonu: {{userData.phone}}</p>
+  </div>
+
+  <h2>Zamówienia</h2>
+  <div class="order-box" *ngFor="let order of ordersData">
+    <h4>Zamówienie z dnia {{order.id.date}}</h4>
+    <ul *ngFor="let item of order.id.dishes">
+      <li>{{item.dishName}} x{{ item.quantity}}</li>
+    </ul>
+    <p><b>Cena:</b> {{order.id.priceAll}}</p>
+  </div>
+
+</div>
+

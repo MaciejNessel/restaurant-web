@@ -1,0 +1,70 @@
+.btn{
+  font-size: 15px;
+  border: 0;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #a14f00;
+  color: white;
+  box-shadow: 3px 3px 10px #dedede;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+
+.btn:hover{
+  transform: scale(1.05);
+  transition: 200ms;
+  background-color: #8c4400;
+}
+
+.card-view{
+  max-width: 50%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.box{
+  border-radius: 4px;
+  box-shadow: 3px 3px 10px #dedede;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: left;
+}
+img{
+  display:block;
+  max-width: 100px;
+  height: 100%;
+  margin-bottom: auto;
+  margin-top: auto;
+  margin-left: 20px;
+}
+.btn-small{
+  font-size: 15px;
+  border: 0;
+  padding: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #a14f00;
+  color: white;
+  box-shadow: 3px 3px 10px #dedede;
+  margin-left: 10px;
+  width: 100px;
+  margin-right: 20px;
+}
+
+.btn-small:hover{
+  transform: scale(1.05);
+  transition: 200ms;
+  background-color: #8c4400;
+}
+
+div{
+  display: block;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+

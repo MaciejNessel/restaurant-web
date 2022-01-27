@@ -1,0 +1,20 @@
+<app-selection-bar></app-selection-bar>
+
+<div class="pagination">
+  <label>Liczba dań na stronie: </label>
+  <input [ngModel]="dishesService.numberOfDishesOnPage" (ngModelChange)="dishesService.changeNumberPages($event)">
+</div>
+
+<div class="pagination">
+  <button (click)="dishesService.prevPage()">❰</button>
+  <label>{{dishesService.actualPage+1}} / {{dishesService.numberOfPages + 1}}  </label>
+  <button (click)="dishesService.nextPage()">❱</button>
+</div>
+
+<div class="card-view">
+  <app-dish *ngFor="let dish of dishesService.dishesSelectedList.slice(dishesService.actualPage*dishesService.numberOfDishesOnPage,dishesService.actualPage*dishesService.numberOfDishesOnPage + dishesService.numberOfDishesOnPage )"
+            [dish]="dish"
+  ></app-dish>
+</div>
+
+
