@@ -35,7 +35,7 @@ There are 3 user modes: client, manager, admin.
 Install dependencies from package.json: ```npm i```<br>
 Run ```ng serve``` for a dev server.
 
-##Sample Views
+## Sample Views
 #### Dish List
 ![Dishes](./img/4.png)
 
