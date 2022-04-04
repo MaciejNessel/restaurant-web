@@ -1,28 +1,50 @@
-# Restauracje
+<h1 align="center">Restaurant Website</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
 
-## Development server
+## Description
+Website of the restaurant with the possibility of ordering food.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Tech Stack
+Angular, CSS3, HTML5, TS, Firebase
+<p align="center">
+<img height="50" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/angular/angular.png" />
+<img height="50" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" />
+<img height="50" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />
+<img height="50" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png" />
+<img height="50" src="https://avatars.githubusercontent.com/u/1335026?s=200&v=4" />
+</p>
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Features
+There are 3 user modes: client, manager, admin.
+### Client Features
+- Ordering food
+- Filtering dishes (price, type of cuisine, average grade)
+- Pagination of the list of dishes on the page
+- Possibility to change currencies (USD/EUR)
+- Preview of order history
+### Manager Features
+- Adding new dishes
+- Modifying / dishes
+### Admin Features
+- User banning system
+- Setting persistence modes on the site
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
+Install dependencies from package.json: ```npm i```<br>
+Run ```ng serve``` for a dev server.
 
-## Running unit tests
+##Sample Views
+#### Dish List
+![Dishes](./img/4.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Manage Menu
+![Menu](./img/3.png)
 
-## Running end-to-end tests
+#### Cart Page
+![Cart](./img/7.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+#### Users manager
+![Admin](./img/2.png)
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-"# restaurant-web" 
